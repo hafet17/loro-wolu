@@ -42,4 +42,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    // default key
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    // definisi key
+    // public function address()
+    // {
+    //     return $this->hasOne(Address::class, 'user');
+    // }
 }
