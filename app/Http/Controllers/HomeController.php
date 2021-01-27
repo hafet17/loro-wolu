@@ -12,7 +12,8 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        return view('home');
+        $users = User::get();
+        return view('home', compact('users'));
     }
 
     public function create(Request $request)
