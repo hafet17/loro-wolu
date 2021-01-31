@@ -7,13 +7,14 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\UserAmount;
 use App\Models\User;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
-        $users = User::get();
-        return view('home', compact('users'));
+        $posts = Post::get();
+        return view('home', compact('posts'));
     }
 
     public function create(Request $request)
